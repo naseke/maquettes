@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/img/Archi full node-appli.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/img/M1/M1-P1-ex.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/M1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/M1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +44,7 @@
       </branch-storage>
     </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,11 +59,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/img/Archi full node + appli.jpg" />
     <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img\M1" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs" />
     </key>
   </component>
@@ -117,7 +129,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647123001384</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Documentation Maquettes et M1">
+      <created>1647124795968</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647124795968</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Documentation Maquettes et M1">
+      <created>1647124896449</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647124896449</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,10 +170,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Documentation Maquettes et M1" />
     <MESSAGE value="Documentation M1" />
     <MESSAGE value="Mise à jour de la documentation de Maquettes" />
     <MESSAGE value="Documentation de M1" />
+    <MESSAGE value="Documentation Maquettes et M1" />
     <option name="LAST_COMMIT_MESSAGE" value="Documentation Maquettes et M1" />
   </component>
 </project>
