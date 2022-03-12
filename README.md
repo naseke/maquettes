@@ -2,6 +2,10 @@
 
 --- 
 
+![GitHub](https://img.shields.io/github/license/naseke/maquettes?style=plastic)
+![GitHub](https://img.shields.io/badge/version-V0.1-informational?style=plastic)
+![GitHub](https://img.shields.io/badge/date-12/03/2022-informational?style=plastic)
+
 ## Objectifs :
 
 La mise en place d'alphanet va demander plusieurs fonctionnalités complexes sur plusieurs modules. Afin de simplifier le developpement Nous allons créer des maquettes sous forme d'exercices.  
