@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/M1/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647120835058</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="init avec Pycharm">
+      <created>1647123001384</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647123001384</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,7 +144,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init avec Pycharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="init avec Pycharm" />
+    <MESSAGE value="Documentation Maquettes et M1" />
+    <MESSAGE value="Documentation M1" />
+    <MESSAGE value="Mise à jour de la documentation de Maquettes" />
+    <MESSAGE value="Documentation de M1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation Maquettes et M1" />
   </component>
 </project>
