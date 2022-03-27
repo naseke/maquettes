@@ -5,9 +5,7 @@ M1 All Servers
 # Copyright (C) Nicolas SALLARES
 # Distributed under the terms of the AGPL License.
 
-import asyncio
 import zmq
-import zmq.asyncio
 from lib.utils import generation_nom, dict_bytes, bytes_dict
 from lib import couleurs, contantes
 from random import randint
@@ -22,11 +20,11 @@ class ServerBase:
     """
 
     def __init__(self, host: str, port: str , debug: bool = False):
-        self.cnx = zmq.asyncio.Context()
+        self.cnx = zmq.Context()
         self.sockets = []
         self.lst_nodes = {}
         self.client = None
-        self.poller = zmq.asyncio.Poller()
+        self.poller = zmq.Poller()
         self.poller.poll(500)
         self._debug = debug
         self.boucle = 0
@@ -52,25 +50,25 @@ class ServerBase:
          It's gonna be hot and wet! That's nice if you're with a lady, but it ain't no good if you're in the jungle.
          What does three up and three down mean to you Airman ? une pub Citroën ! (End of an inning !)""", bold=True)
 
-    async def start(self):
+    def start(self):
         self.__is_start = True
         self.msg_welcome()
 
-    async def stop(self):
+    def stop(self):
         self.__is_start = False
 
-    async def is_start(self):
+    def is_start(self):
         return self.__is_start
 
-    async def add_socket(self, model: int) -> zmq.Context.socket:
+    def add_socket(self, model: int) -> zmq.Context.socket:
         tmp = self.cnx.socket(model)
         tmp.bind(f"tcp://{self.host}:{self.port}")
         self.poller.register(tmp, zmq.POLLIN)
         if self._debug: couleurs.AffichageColor().msg_DEBUG(f"Ajout du port {model}")
         return tmp
 
-    async def suppr_socket(self, soc: zmq.Context.socket):
-        await self.poller.unregister(soc)
+    def suppr_socket(self, soc: zmq.Context.socket):
+        self.poller.unregister(soc)
         #soc.close()
 
 class M1P1(ServerBase):
@@ -79,41 +77,41 @@ class M1P1(ServerBase):
         super().__init__(host, port, debug)
 
 
-    async def start(self):
-        await super().start()
+    def start(self):
+        super().start()
         couleurs.AffichageColor().msg_INFO(msg=f"Nom du server : {self.name}\n"
                                                f"Host : {self.host}\n"
                                                f"Port : {self.port}")
-        self.sockets.append(await self.add_socket(zmq.ROUTER))
-        await self.process_startup()
-        while await self.is_start():
+        self.sockets.append(self.add_socket(zmq.ROUTER))
+        self.process_startup()
+        while self.is_start():
             couleurs.AffichageColor().msg_INFO(f"boucle n°{self.boucle}")
             self.boucle += 1
             try:
-                await self.msg_listen()
-                await self.msg_send_like_exo()
+                self.msg_listen()
+                self.msg_send_like_exo()
             except KeyboardInterrupt:
-                await self.stop()
+                self.stop()
 
 
-    async def stop(self):
-        await super().stop()
+    def stop(self):
+        super().stop()
         couleurs.AffichageColor().msg_WARNING("Arrêt du serveur")
 
-    async def msg_listen(self):
-        socks = dict(await self.poller.poll(500))  # Tick
+    def msg_listen(self):
+        socks = dict(self.poller.poll(500))  # Tick
 
         if self.sockets[0] in socks:
-            message = await self.sockets[0].recv_multipart()  # I8
+            message = self.sockets[0].recv_multipart()  # I8
             if self._debug: couleurs.AffichageColor().msg_DEBUG(f"(Srv) Message reçu : {message}")
-            msg_rep = await self.trt_msg(*message)
-            await self.msg_send_reponse(msg_rep)
+            msg_rep = self.trt_msg(*message)
+            self.msg_send_reponse(msg_rep)
 
 
-    async def bytes_2_each_elem_lst(self, *lst: list): # pour le turfu
+    def bytes_2_each_elem_lst(self, *lst: list): # pour le turfu
         return [elem.encode() for elem in lst]
 
-    async def process_startup(self):
+    def process_startup(self):
         # init d'une connexion tmp
         # clt = ClientReq(Params().PARAMS['node_host2'], Params().PARAMS['node_port2'], self.name)
 
@@ -129,17 +127,17 @@ class M1P1(ServerBase):
         # envoie de la demande de table
 
 
-    async def lst_nodes_add(self, host: str, port: str, nom: str = None):
+    def lst_nodes_add(self, host: str, port: str, nom: str = None):
         self.lst_nodes.update(ClientReq(host, port, nom))
         print(self.lst_nodes)
 
-    async def msg_send_reponse (self, rep: list):
-        await self.sockets[0].send_multipart(rep)
+    def msg_send_reponse (self, rep: list):
+        self.sockets[0].send_multipart(rep)
         if self._debug: couleurs.AffichageColor().msg_DEBUG(f"Envoie de la confirmation  : {rep[2].decode()}")
         print(f"{rep[0].decode()}: {rep[2].decode()}")
 
 
-    async def trt_msg(self, *msg: list): # -> list #I8 /I9
+    def trt_msg(self, *msg: list): # -> list #I8 /I9
         # il manque plein de chose pour le moment
         rep = {}
         if len(msg) == 3:  # avec enveloppe
@@ -162,7 +160,7 @@ class M1P1(ServerBase):
 
         return env
 
-    async def msg_send_like_exo(self): #I11
+    def msg_send_like_exo(self): #I11
 
         # phrases venant du site http://romainvaleri.online.fr/ générateur de phrase
 
@@ -187,10 +185,10 @@ class M1P1(ServerBase):
             sleep(delais)
             if self._debug: couleurs.AffichageColor().msg_DEBUG(f"Envoie du Ping")
             clt = ClientReq(self.node[0], self.node[1], self.name, debug=True)
-            await clt.msg_send(**await clt.msg_create(contantes.MSG_CTRL_PING))
+            clt.msg_send(**clt.msg_create(contantes.MSG_CTRL_PING))
 
         except KeyboardInterrupt:
-            await self.stop()
+            self.stop()
 
 def main():
 
@@ -200,6 +198,6 @@ def main():
     t.node=[Params().PARAMS['node_host'], Params().PARAMS['node_port2']]
 
     # t = M1P1("192.168.1.9", "5555", debug=False)
-    asyncio.run(t.start())
+    t.start()
 
 if __name__ == "__main__": main()

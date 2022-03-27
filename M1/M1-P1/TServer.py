@@ -1,10 +1,4 @@
-"""
-M1 All Servers
-"""
-
-# Copyright (C) Nicolas SALLARES
-# Distributed under the terms of the AGPL License.
-
+import multiprocessing
 import asyncio
 import zmq
 import zmq.asyncio
@@ -15,28 +9,45 @@ from lib.parametres import Params
 from Client import ClientReq
 from time import sleep
 
-class ServerBase:
+
+class ServerBase(multiprocessing.Process):
     """
     I6 : init
     I8 : init msg
     """
 
-    def __init__(self, host: str, port: str , debug: bool = False):
-        self.cnx = zmq.asyncio.Context()
+    def __init__(self, host: str, port: str, debug: bool = False):
+        multiprocessing.Process.__init__(self)
+        self.cnx = None
         self.sockets = []
         self.lst_nodes = {}
         self.client = None
-        self.poller = zmq.asyncio.Poller()
-        self.poller.poll(500)
         self._debug = debug
         self.boucle = 0
         self.host = host
         self.port = port
         self.__is_start = False
-        self.name = generation_nom()
         self.node = []
+        self.name = generation_nom()
+        self.poller = zmq.Poller()
+        self.timeout = 1000
 
+    async def start(self):
+        super().start()
 
+    async def run(self):
+        """Init"""
+        self.cnx = zmq.asyncio.Context()
+
+        """Run"""
+        self.__is_start = True
+        self.msg_welcome()
+
+    async def stop(self):
+        self.__is_start = False
+
+    async def is_start(self):
+        return self.__is_start
 
     def msg_welcome(self):
         couleurs.AffichageColor().msg_INFO(msg="""
@@ -52,41 +63,30 @@ class ServerBase:
          It's gonna be hot and wet! That's nice if you're with a lady, but it ain't no good if you're in the jungle.
          What does three up and three down mean to you Airman ? une pub Citroën ! (End of an inning !)""", bold=True)
 
-    async def start(self):
-        self.__is_start = True
-        self.msg_welcome()
-
-    async def stop(self):
-        self.__is_start = False
-
-    async def is_start(self):
-        return self.__is_start
-
     async def add_socket(self, model: int) -> zmq.Context.socket:
         tmp = self.cnx.socket(model)
         tmp.bind(f"tcp://{self.host}:{self.port}")
-        self.poller.register(tmp, zmq.POLLIN)
+        await self.poller.register(tmp, zmq.POLLIN)
         if self._debug: couleurs.AffichageColor().msg_DEBUG(f"Ajout du port {model}")
         return tmp
 
     async def suppr_socket(self, soc: zmq.Context.socket):
         await self.poller.unregister(soc)
-        #soc.close()
+        # soc.close()
 
 class M1P1(ServerBase):
 
     def __init__(self, host, port, debug=False):
         super().__init__(host, port, debug)
 
-
-    async def start(self):
-        await super().start()
+    async def run(self):
+        asyncio.run(super().run())
         couleurs.AffichageColor().msg_INFO(msg=f"Nom du server : {self.name}\n"
                                                f"Host : {self.host}\n"
                                                f"Port : {self.port}")
         self.sockets.append(await self.add_socket(zmq.ROUTER))
         await self.process_startup()
-        while await self.is_start():
+        while self.is_start():
             couleurs.AffichageColor().msg_INFO(f"boucle n°{self.boucle}")
             self.boucle += 1
             try:
@@ -95,22 +95,25 @@ class M1P1(ServerBase):
             except KeyboardInterrupt:
                 await self.stop()
 
-
     async def stop(self):
         await super().stop()
         couleurs.AffichageColor().msg_WARNING("Arrêt du serveur")
 
     async def msg_listen(self):
-        socks = dict(await self.poller.poll(500))  # Tick
+        try:
+            socks = dict(self.poller.poll(1000))  # Tick
 
-        if self.sockets[0] in socks:
-            message = await self.sockets[0].recv_multipart()  # I8
-            if self._debug: couleurs.AffichageColor().msg_DEBUG(f"(Srv) Message reçu : {message}")
-            msg_rep = await self.trt_msg(*message)
-            await self.msg_send_reponse(msg_rep)
+            if self.sockets[0] in socks:
+                message = await self.sockets[0].recv_multipart()  # I8
+                if self._debug: couleurs.AffichageColor().msg_DEBUG(f"(Srv) Message reçu : {message}")
+                msg_rep = await self.trt_msg(*message)
+                await self.msg_send_reponse(msg_rep)
+
+        except KeyboardInterrupt:
+            await self.stop()
 
 
-    async def bytes_2_each_elem_lst(self, *lst: list): # pour le turfu
+    def bytes_2_each_elem_lst(self, *lst: list): # pour le turfu
         return [elem.encode() for elem in lst]
 
     async def process_startup(self):
@@ -128,7 +131,6 @@ class M1P1(ServerBase):
 
         # envoie de la demande de table
 
-
     async def lst_nodes_add(self, host: str, port: str, nom: str = None):
         self.lst_nodes.update(ClientReq(host, port, nom))
         print(self.lst_nodes)
@@ -137,7 +139,6 @@ class M1P1(ServerBase):
         await self.sockets[0].send_multipart(rep)
         if self._debug: couleurs.AffichageColor().msg_DEBUG(f"Envoie de la confirmation  : {rep[2].decode()}")
         print(f"{rep[0].decode()}: {rep[2].decode()}")
-
 
     async def trt_msg(self, *msg: list): # -> list #I8 /I9
         # il manque plein de chose pour le moment
@@ -187,19 +188,25 @@ class M1P1(ServerBase):
             sleep(delais)
             if self._debug: couleurs.AffichageColor().msg_DEBUG(f"Envoie du Ping")
             clt = ClientReq(self.node[0], self.node[1], self.name, debug=True)
-            await clt.msg_send(**await clt.msg_create(contantes.MSG_CTRL_PING))
+            await clt.msg_send(**clt.msg_create(contantes.MSG_CTRL_PING))
 
         except KeyboardInterrupt:
             await self.stop()
+
 
 def main():
 
     t = M1P1(Params().PARAMS['node_host'], Params().PARAMS['node_port'], debug=True)
 
-    #Pour le moment
-    t.node=[Params().PARAMS['node_host'], Params().PARAMS['node_port2']]
+    # Pour le moment
+    t.node = [Params().PARAMS['node_host'], Params().PARAMS['node_port2']]
 
     # t = M1P1("192.168.1.9", "5555", debug=False)
     asyncio.run(t.start())
+    try:
+        t.join()
+    except KeyboardInterrupt:
+        t.terminate()
+
 
 if __name__ == "__main__": main()

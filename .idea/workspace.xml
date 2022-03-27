@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="I4 Init ServerBase">
-      <change afterPath="$PROJECT_DIR$/M1/M1-P1/Client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/M1/M1-P1/Server.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/M1/M1-P1/test_routeur.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/contantes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/couleurs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/utils.py" afterDir="false" />
+    <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/M1/M1-P1/Server2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M1/M1-P1/TServer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M1/M1-P1/etc/param.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M1/M1-P1/old/Client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M1/M1-P1/old/Server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M1/M1-P1/test_routeur2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Singleton.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/parametres.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]2/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]3/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/M1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/M1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M1/M1-P1/Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/M1/M1-P1/Client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M1/M1-P1/Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/M1/M1-P1/Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/M1/M1-P1/test_routeur.py" beforeDir="false" afterPath="$PROJECT_DIR$/M1/M1-P1/test_routeur.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +64,6 @@
       </branch-storage>
     </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -75,21 +86,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/M1/M1-P1" />
     <property name="settings.editor.selected.configurable" value="proofread" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P1" />
+      <recent name="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P1\old" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\lib" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P1" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img\M1" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Client">
+  <component name="RunManager" selected="Python.Server2">
     <configuration name="Client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="maquettes" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,7 +146,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Server2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="maquettes" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -144,7 +158,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/M1/M1-P1/Test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/M1/M1-P1/Server2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,7 +167,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cltt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="TServer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="maquettes" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -165,7 +179,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/M1/M1-P1/cltt.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/M1/M1-P1/TServer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -195,7 +209,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_routeur2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="maquettes" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -203,11 +217,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/M1/M1-P1" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/utils.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/M1/M1-P1/test_routeur2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -218,11 +232,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Client" />
+        <item itemvalue="Python.Server2" />
         <item itemvalue="Python.Server" />
-        <item itemvalue="Python.Test" />
-        <item itemvalue="Python.cltt" />
-        <item itemvalue="Python.utils" />
+        <item itemvalue="Python.TServer" />
+        <item itemvalue="Python.test_routeur2" />
+        <item itemvalue="Python.Client" />
       </list>
     </recent_temporary>
   </component>
