@@ -1,5 +1,6 @@
 import json
 import sys
+import hashlib
 
 
 def generation_nom():
@@ -50,6 +51,11 @@ def tprint(msg):
     """like print, but won't get newlines confused with multiple threads"""
     sys.stdout.write(msg + '\n')
     sys.stdout.flush()
+
+
+def lst2key(lst: list) -> str:
+    return hashlib.md5(str(lst).encode()).hexdigest()
+
 
 
 def main():
