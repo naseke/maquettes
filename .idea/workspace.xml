@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/M1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/M1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648988470574</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Description succinct de M1-P2 et M1-P3">
+      <created>1649001569693</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1649001569693</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,6 +355,7 @@
     <MESSAGE value="Mise à jour des images dans la documentation" />
     <MESSAGE value="I9 problème de dialogue entre les deux serveurs" />
     <MESSAGE value="Les deux serveurs dialoguent !" />
-    <option name="LAST_COMMIT_MESSAGE" value="Les deux serveurs dialoguent !" />
+    <MESSAGE value="Description succinct de M1-P2 et M1-P3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Description succinct de M1-P2 et M1-P3" />
   </component>
 </project>
