@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/M1/M1-P1/RServer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/M1/M1-P1/TClient.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/M1/M1-P1/code_standalone.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/M1/M1-P1/code_standalone2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ordonnanceur.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M1/M1-P1/Client.py" beforeDir="false" afterPath="$PROJECT_DIR$/M1/M1-P1/Client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M1/M1-P1/Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/M1/M1-P1/Server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M1/M1-P1/Server2.py" beforeDir="false" afterPath="$PROJECT_DIR$/M1/M1-P1/Server2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/M1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/M1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/couleurs.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/couleurs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648373959843</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Les deux serveurs dialoguent !">
+      <created>1648988470574</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1648988470574</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -351,6 +347,7 @@
     <MESSAGE value="Documentation Maquettes et M1" />
     <MESSAGE value="Mise à jour des images dans la documentation" />
     <MESSAGE value="I9 problème de dialogue entre les deux serveurs" />
-    <option name="LAST_COMMIT_MESSAGE" value="I9 problème de dialogue entre les deux serveurs" />
+    <MESSAGE value="Les deux serveurs dialoguent !" />
+    <option name="LAST_COMMIT_MESSAGE" value="Les deux serveurs dialoguent !" />
   </component>
 </project>
