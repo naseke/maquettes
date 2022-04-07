@@ -95,7 +95,7 @@ class M1P1(ServerBase):
         while self.is_start():
             couleurs.AffichageColor().msg_INFO(f"boucle n°{self.boucle}")
             delais = randint(1, 10)
-            self.ordo.add_task('send_ping', False, self, seconds=delais)
+            self.ordo.add_task('send_msg', False, self, seconds=delais)
             self.boucle += 1
             try:
                 self.msg_listen()
@@ -156,6 +156,10 @@ class M1P1(ServerBase):
                 couleurs.AffichageColor().msg_OK("PING!")
                 rep['cmd'] = contantes.MSG_CTRL_PONG
                 env = [msg[0], msg[1], bytes_dict(**rep)]
+            elif t['cmd'] == contantes.MSG_ORD_PRINT:
+                couleurs.AffichageColor().msg_OK(t['data'])
+                rep['cmd'] = contantes.MSG_CTRL_OK
+                env = [msg[0], msg[1], bytes_dict(**rep)]
             else:
                 rep['cmd'] = contantes.MSG_CTRL_OK
                 env = [msg[0], msg[1], bytes_dict(**rep)]
@@ -193,9 +197,11 @@ class M1P1(ServerBase):
             delais = randint(1, 10)
             phrase = randint(0, 9)
             # sleep(delais)
-            if self._debug: couleurs.AffichageColor().msg_DEBUG(f"Envoie du Ping")
+            # if self._debug: couleurs.AffichageColor().msg_DEBUG(f"Envoie du Ping")
+
             clt = ClientReq(self.node[0], self.node[1], self.name, debug=False)
-            clt.msg_send(**clt.msg_create(contantes.MSG_CTRL_PING))
+            #clt.msg_send(**clt.msg_create(contantes.MSG_CTRL_PING))
+            clt.msg_send(**clt.msg_create(contantes.MSG_ORD_PRINT, phrases[phrase]))
 
         except KeyboardInterrupt:
             self.stop()

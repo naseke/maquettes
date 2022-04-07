@@ -99,7 +99,7 @@ class Ordonnanceur:
 
 class OrdoSvr(Ordonnanceur):
 
-    def send_ping(self, obj):
+    def send_msg(self, obj):
         obj.msg_send_like_exo()
 
 

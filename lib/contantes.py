@@ -10,6 +10,8 @@ MSG_CTRL_KO = "\001"
 MSG_CTRL_PING = "\002"
 MSG_CTRL_PONG = "\003"
 
+MSG_ORD_PRINT = "\103"
+
 
 
 
