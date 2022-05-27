@@ -11,7 +11,7 @@
 La mise en place d'alphanet va demander plusieurs fonctionnalités complexes sur plusieurs modules. Afin de simplifier le developpement Nous allons créer des maquettes sous forme d'exercices.  
 Donc, cela aura comme effet d'isoler, de créer le code et de tester la fonctionnalité.
 
-Voici un schéma reprenant la globalité des composants et un peu des fonctionnalités :
+Voici un schéma reprenant la globalité des composants et un peu les fonctionnalités :
 
 <img src="docs/img/Archi full node-appli.jpg" width="1000"/>
 
