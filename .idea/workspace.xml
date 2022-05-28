@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="Description succinct de M1-P2 et M1-P3">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/asyncsrv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/bus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/bus_old.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/buslight.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/classroot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/clients.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/etc/param.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/lbbroker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/lbbroker2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/peering1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/poller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/proc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/rtdealer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/rtreq.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/start_bus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/start_peering1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/workers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zexos/zhelpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/M1_old.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/M1/M1-P1-ex.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/M1/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/M1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/M1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,13 +60,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/naseke/PycharmProjects/maquettes/docs/img/M1",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/naseke/PycharmProjects/maquettes/docs/img/M1&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img\M1" />
@@ -229,7 +200,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/M1/M1-P1/test_routeur.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P1\old\test_routeur.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -363,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649001588962</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Refonte M1-P1 Nouvelle architecture et extention avec M1-P2">
+      <created>1653682766562</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1653682766562</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,6 +376,7 @@
     <MESSAGE value="I9 problème de dialogue entre les deux serveurs" />
     <MESSAGE value="Les deux serveurs dialoguent !" />
     <MESSAGE value="Description succinct de M1-P2 et M1-P3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Description succinct de M1-P2 et M1-P3" />
+    <MESSAGE value="Refonte M1-P1 Nouvelle architecture et extention avec M1-P2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refonte M1-P1 Nouvelle architecture et extention avec M1-P2" />
   </component>
 </project>

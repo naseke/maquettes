@@ -13,7 +13,7 @@ from lib.utils import generation_nom, dict_bytes, bytes_dict
 from lib import couleurs, contantes, ordonnanceur
 from random import randint
 from lib.parametres import Params
-from Client import ClientReq
+from ClientV2 import ClientReq
 from time import sleep
 
 
