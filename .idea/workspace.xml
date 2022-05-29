@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="" />
+    <list default="true" id="d543deda-73b0-4e0f-832d-056989eebfad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/M1/M1-P2/bus.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M1/M1-P2/clients.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/M1/M1-P2/workers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,23 +68,24 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/naseke/PycharmProjects/maquettes/docs/img/M1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/naseke/PycharmProjects/maquettes/M1/M1-P1&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P1" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img\M1" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\Zexos" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\lib" />
-      <recent name="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P2" />
+      <recent name="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P1\old" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\M1\M1-P1" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img" />
       <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs\img\M1" />
-      <recent name="C:\Users\naseke\PycharmProjects\maquettes\docs" />
     </key>
   </component>
   <component name="RunManager" selected="Python.bus">
@@ -341,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653682766562</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Refonte M1-P1 Nouvelle architecture et extention avec M1-P2">
+      <created>1653773519626</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1653773519626</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
