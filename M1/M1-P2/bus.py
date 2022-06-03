@@ -4,18 +4,20 @@ import time
 from lib import utils
 import zmq
 import multiprocessing
+import threading
 import workers
+
 
 class BusDonnees:
 
-    def __init__(self, debug: bool = False):
+    def __init__(self, frontend: str, backend: str, middlestep: str, debug: bool = False):
         self.context = zmq.Context()
         self.frontend = self.context.socket(zmq.ROUTER)
-        self.frontend.bind("ipc://frontend.ipc")
+        self.frontend.bind(frontend)
         self.internalbe = self.context.socket(zmq.ROUTER)
-        self.internalbe_url = 'ipc://internalbe.ipc'
+        self.internalbe_url = backend
         self.internalbe.bind(self.internalbe_url)
-        self.pool = multiprocessing.Pool(5, utils.init_worker) # pool des worker ?
+        # self.pool = multiprocessing.Pool(5, utils.init_worker) # pool des worker ?
         self._debug = debug
         self.__is_start = False
         self.poller = zmq.Poller()
@@ -27,8 +29,14 @@ class BusDonnees:
     def is_start(self) -> bool:
         return self.__is_start
 
-    def start_wrk(self, task: any, *args: any) -> multiprocessing.Process:
-        proc = multiprocessing.Process(target=task, args=args)
+    # def start_wrk(self, task: any, *args: any) -> multiprocessing.Process:
+    #    proc = multiprocessing.Process(target=task, args=args)
+    #    proc.daemon = True
+    #    proc.start()
+    #    return proc
+
+    def start_wrk(self, task: any, *args: any) -> threading.Thread:
+        proc = threading.Thread(target=task, args=args)
         proc.daemon = True
         proc.start()
         return proc
@@ -112,17 +120,32 @@ class BusDonnees:
         for _ in range(5):
             # self.pool.apply_async(workers.workerPrint_use, [self.internalbe_url, self._debug])
             # self.pool.apply_async(workers.workerPrint_use, [self.internalbe_url, True])
-            self.start_wrk(workers.workerPrint_use, self.internalbe_url, self._debug)
-            self.start_wrk(workers.workerAfficher_use, self.internalbe_url, self._debug)
+            # self.start_wrk(workers.workerPrint_use, self.internalbe_url, self._debug)
+            # self.start_wrk(workers.workerAfficher_use, self.internalbe_url, self._debug)
+            pass
         time.sleep(5)
 
     def msg_pas_service(self, clt: bytes) -> None:
         self.frontend.send_multipart([clt, b'', b"No_service"])
 
+    @classmethod
+    def bus_multi(cls, frontend: str, backend: str, middlestep: str, debug: bool = False):
+        b = cls(frontend, backend, middlestep)
+        b.start()
 
-def bus_multi():
-    b = BusDonnees()
-    b.start()
+
+class BusDonneesA(BusDonnees):
+
+    def demarrage(self) -> None:
+        for _ in range(5):
+            self.start_wrk(workers.workerPrint_use, self.internalbe_url, self._debug)
+
+
+class BusDonneesB(BusDonnees):
+
+    def demarrage(self) -> None:
+        for _ in range(5):
+            self.start_wrk(workers.workerAfficher_use, self.internalbe_url, self._debug)
 
 
 def main():
@@ -130,21 +153,32 @@ def main():
 
     def dem_print():
         for _ in range(10):
-            proc = multiprocessing.Process(target=clients.clientTestPrint_use, args=["ipc://frontend.ipc", False])
+            proc = multiprocessing.Process(target=clients.clientTestPrint_use, args=["ipc://frontendA.ipc", False])
             proc.daemon = True
             proc.start()
 
     def dem_afficher():
-        for _ in range(10 ):
-            proc = multiprocessing.Process(target=clients.clientTestAfficher_use, args=["ipc://frontend.ipc", False])
+        for _ in range(10):
+            proc = multiprocessing.Process(target=clients.clientTestAfficher_use, args=["ipc://frontendB.ipc", False])
             proc.daemon = True
             proc.start()
 
     dem_afficher()
     dem_print()
 
-    b = BusDonnees(False)
-    b.start()
+    def BDA():
+        proc = multiprocessing.Process(target=BusDonneesA.bus_multi, args=["ipc://frontendA.ipc", "ipc://internalbeA.ipc", "ipc://middlestepA.ipc", False])
+        proc.daemon = True
+        proc.start()
 
+    def BDB():
+        proc = multiprocessing.Process(target=BusDonneesB.bus_multi, args=["ipc://frontendB.ipc", "ipc://internalbeB.ipc", "ipc://middlestepB.ipc", True])
+        proc.daemon = True
+        proc.start()
+
+    BDA()
+    BDB()
+
+    while True: pass
 
 if __name__ == "__main__": main()
